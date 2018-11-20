@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const hostname = 'localhost';
-const port = 3000;
+const port = 4000;
 
 const server = http.createServer((req,res) => {
     console.log("Request for " + req.url + ' by method ' + req.method);
@@ -29,7 +29,7 @@ const server = http.createServer((req,res) => {
                 res.statusCode = 200;
                 res.setHeader('Content-Type', 'text/html');
                 fs.createReadStream(filePath).pipe(res);
-            });
+            })
         }
         else {
             res.statusCode = 400;
